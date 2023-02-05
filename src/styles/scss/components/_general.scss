@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	height: 100vh;
+	max-width: 100vw;
+}
+
+#root{
+	width: 100%;
+	height: 100%;
+
+	display: grid;
+}
+
+#calcContainer{
+	align-self: center;
+	justify-self: center;
+	background-color: map-get($paleta,"background");
+
+	padding: 1.5rem;
+	width: 35rem;
+	height: 60rem;
+
+	color: map-get($paleta,"fontColor");
+	font-size: map-get($paleta,"fontSize");
+
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: repeat(2,auto);
+	grid-template-areas:
+	"text text"
+	"num control"
+	;
+
+	textarea{
+		width: 95%;
+		height: 20%;
+
+		background-color: map-get($paleta,"textArea");		
+		overflow: visible;
+
+		grid-area: text;
+	}
+
+	#numContainer{
+		grid-area: num;
+	}
+
+	#controlContainer{
+		grid-area: control;
+	}
+}
