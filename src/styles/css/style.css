@@ -25,25 +25,47 @@ body {
   padding: 1.5rem;
   width: 35rem;
   height: 60rem;
+  border-radius: 10px;
   color: white;
   font-size: 3rem;
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: 1fr 1fr;
   grid-template-areas: "text text" "num control";
+  row-gap: 1rem;
 }
-#calcContainer textarea {
+#calcContainer .textarea {
   width: 95%;
-  height: 20%;
   background-color: #3d3d3d;
   overflow: visible;
   grid-area: text;
 }
+#calcContainer span {
+  border-radius: 50%;
+  width: 6.4rem;
+  height: 6.4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
 #calcContainer #numContainer {
   grid-area: num;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+#calcContainer #numContainer span {
+  background-color: #433131;
 }
 #calcContainer #controlContainer {
   grid-area: control;
+  display: flex;
+  flex-direction: column;
+}
+#calcContainer #controlContainer span {
+  background-color: #d23535;
 }
 
 /*# sourceMappingURL=style.css.map */

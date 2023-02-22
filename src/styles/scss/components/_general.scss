@@ -28,20 +28,23 @@ body{
 	width: 35rem;
 	height: 60rem;
 
+	border-radius: 10px;
+
 	color: map-get($paleta,"fontColor");
 	font-size: map-get($paleta,"fontSize");
 
 	display: grid;
 	grid-template-columns: 1fr auto;
-	grid-template-rows: repeat(2,auto);
+	grid-template-rows: 1fr 1fr;
 	grid-template-areas:
 	"text text"
 	"num control"
 	;
 
-	textarea{
+	row-gap: 1rem;
+
+	.textarea{
 		width: 95%;
-		height: 20%;
 
 		background-color: map-get($paleta,"textArea");		
 		overflow: visible;
@@ -49,11 +52,39 @@ body{
 		grid-area: text;
 	}
 
+	span{
+		border-radius: 50%;
+		width: 6.4rem;
+		height: 6.4rem;
+
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		margin: 0.5rem;
+	}
+
 	#numContainer{
 		grid-area: num;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-self: center;
+		
+		span{
+			background-color:map-get($paleta,"simpleBtn");
+		}
 	}
 
 	#controlContainer{
 		grid-area: control;
+
+		display: flex;
+		flex-direction: column;
+
+		span{
+			background-color:map-get($paleta,"btn");
+		}
 	}
 }
